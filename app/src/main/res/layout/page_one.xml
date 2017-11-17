@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:showAsAction="ifRoom|collapseActionView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <SearchView
+                    android:id="@+id/SearchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:queryHint="輸入目的地，景點或活動...">
+
+                </SearchView>
+
+                <FrameLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp">
+                    <!--轮播图位置-->
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/live_view_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                    <!--右下角小圆点-->
+                    <LinearLayout
+                        android:id="@+id/live_indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="10dp"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    app:srcCompat="@drawable/p1" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="熱門目的地"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="查看全部" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/live_view_pager2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </FrameLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

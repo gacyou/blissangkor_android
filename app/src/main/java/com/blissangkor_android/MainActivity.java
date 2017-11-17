@@ -55,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
         pageList.add(new PageOne(MainActivity.this));
         pageList.add(new PageTwo(MainActivity.this));
         pageList.add(new PageThree(MainActivity.this));
+        pageList.add(new PageFour(MainActivity.this));
+        pageList.add(new PageFive(MainActivity.this));
+        pageList.add(new PageSix(MainActivity.this));
     }
 
     private void initView() {
@@ -62,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
         mTablayout.addTab(mTablayout.newTab().setText("首頁"));
         mTablayout.addTab(mTablayout.newTab().setText("目的地"));
         mTablayout.addTab(mTablayout.newTab().setText("購物車"));
+        mTablayout.addTab(mTablayout.newTab().setText("諮詢中心"));
+        mTablayout.addTab(mTablayout.newTab().setText("旅伴系統"));
+        mTablayout.addTab(mTablayout.newTab().setText("個人中心"));
 
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(new SamplePagerAdapter());
