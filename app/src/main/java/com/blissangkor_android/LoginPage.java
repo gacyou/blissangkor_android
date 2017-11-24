@@ -55,6 +55,7 @@ public class LoginPage extends Activity  {
 
                 Intent intent = new Intent(context, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

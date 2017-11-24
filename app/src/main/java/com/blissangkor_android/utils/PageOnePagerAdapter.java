@@ -16,7 +16,7 @@ import com.socks.library.KLog;
 
 import java.util.List;
 
-public class MyPagerAdapter extends PagerAdapter {
+public class PageOnePagerAdapter extends PagerAdapter {
 
     public static final int MAX_SCROLL_VALUE = 10000;
 
@@ -25,7 +25,7 @@ public class MyPagerAdapter extends PagerAdapter {
     private LayoutInflater mInflater;
     private int x;
 
-    public MyPagerAdapter(List<ImageView> items, Context context) {
+    public PageOnePagerAdapter(List<ImageView> items, Context context) {
         mContext = context;
         mInflater = LayoutInflater.from(context);
         mItems = items;
@@ -43,7 +43,7 @@ public class MyPagerAdapter extends PagerAdapter {
         //对ViewPager页号求摸取出View列表中要显示的项
         position %= mItems.size();
         x = position;
-        Log.d("Adapter", "instantiateItem: position: " + position);
+        //Log.d("Adapter", "instantiateItem: position: " + position);
         ret = mItems.get(position);
         //如果View已经在之前添加到了一个父组件，则必须先remove，否则会抛出IllegalStateException。
         ViewParent viewParent = ret.getParent();

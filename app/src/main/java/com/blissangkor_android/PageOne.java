@@ -1,20 +1,26 @@
 package com.blissangkor_android;
 
-import android.content.Context;
-
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 
-import com.blissangkor_android.utils.MyPagerAdapter;
+import com.blissangkor_android.utils.ClickableViewPager;
+import com.blissangkor_android.utils.PageOnePagerAdapter;
+import com.blissangkor_android.utils.PageOnePagerAdapter2;
+import com.blissangkor_android.utils.PageOnePagerAdapter3;
+
+import com.blissangkor_android.utils.PageOnePagerAdapter4;
+import com.blissangkor_android.utils.PageOnePagerAdapter5;
+import com.blissangkor_android.utils.PageOnePagerAdapter6;
 import com.socks.library.KLog;
 
 import java.lang.ref.WeakReference;
@@ -25,57 +31,166 @@ import java.util.List;
  * Created by Gacyou on 2017/11/15.
  */
 
-public class PageOne extends PageView implements ViewPager.OnPageChangeListener, View.OnTouchListener{
+public class PageOne  extends android.support.v4.app.Fragment implements ViewPager.OnPageChangeListener, View.OnTouchListener{
 
-    public Context context;
     public static final int VIEW_PAGER_DELAY = 7000;
-    private MyPagerAdapter mAdapter;
+
+    private PageOnePagerAdapter mAdapter;
+    private PageOnePagerAdapter2 mAdapter2;
+    private PageOnePagerAdapter3 mAdapter3;
+    private PageOnePagerAdapter4 mAdapter4;
+    private PageOnePagerAdapter5 mAdapter5;
+    private PageOnePagerAdapter6 mAdapter6;
+
     private List<ImageView> mItems;
     private ImageView[] mBottomImages;
     private LinearLayout mBottomLiner;
+
     private ViewPager mViewPager;
+    private ClickableViewPager mViewPager2;
+    private ClickableViewPager mViewPager3;
+    private ClickableViewPager mViewPager4;
+    private ClickableViewPager mViewPager5;
+    private ClickableViewPager mViewPager6;
+
     private SearchView mSearchView;
 
     private int currentViewPagerItem;
-    //是否自动播放
+
     private boolean isAutoPlay;
 
     private MyHandler mHandler;
     private Thread mThread;
 
-    public PageOne(Context context) {
-        super(context);
-        View view = LayoutInflater.from(context).inflate(R.layout.page_one, null);
+    private static final int[] pictures = { R.drawable.p2, R.drawable.p2, R.drawable.p1 };
+    private static final int[] pictures2 = { R.drawable.p1, R.drawable.p1, R.drawable.p1 };
+    private static final int[] pictures3 = { R.drawable.p1, R.drawable.p2, R.drawable.p1 };
+    private static final int[] pictures4 = { R.drawable.p2, R.drawable.p2, R.drawable.p1 };
+    private static final int[] pictures5 = { R.drawable.p1, R.drawable.p2, R.drawable.p2 };
+    private static final int[] pictures6 = { R.drawable.p2, R.drawable.p2, R.drawable.p2 };
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.page_one, container, false);
 
         mSearchView = ((SearchView) view.findViewById(R.id.SearchView));
         mSearchView.setIconifiedByDefault(false);
 
+        //不會動的單張廣告圖
+        ImageView imageView = ((ImageView)view.findViewById(R.id.imageView));
+        imageView.setImageResource(R.drawable.p2);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
         mHandler = new MyHandler(this);
+
         //配置轮播图ViewPager
         mViewPager = ((ViewPager) view.findViewById(R.id.live_view_pager));
         mItems = new ArrayList<>();
-        mAdapter = new MyPagerAdapter(mItems, context);
+        mAdapter = new PageOnePagerAdapter(mItems, getContext());
         mViewPager.setAdapter(mAdapter);
         mViewPager.setOnTouchListener(this);
         mViewPager.addOnPageChangeListener(this);
         isAutoPlay = true;
 
+        //ViewPager2
+        mViewPager2 = ((ClickableViewPager) view.findViewById(R.id.live_view_pager2));
+        mViewPager2.setPageMargin(40);
+        List<Integer> list2 = new ArrayList<Integer>();
+        for(int i : pictures2){list2.add(i);}
+        mAdapter2 = new PageOnePagerAdapter2(list2, getContext());
+        mViewPager2.setAdapter(mAdapter2);
+
+        //ViewPager3
+        mViewPager3 = ((ClickableViewPager) view.findViewById(R.id.live_view_pager3));
+        mViewPager3.setPageMargin(40);
+        List<Integer> list3 = new ArrayList<Integer>();
+        for(int i : pictures3){list3.add(i);}
+        mAdapter3 = new PageOnePagerAdapter3(list3, getContext());
+        mViewPager3.setAdapter(mAdapter3);
+
+        //ViewPager4
+        mViewPager4 = ((ClickableViewPager) view.findViewById(R.id.live_view_pager4));
+        mViewPager4.setPageMargin(40);
+        List<Integer> list4 = new ArrayList<Integer>();
+        for(int i : pictures4){list4.add(i);}
+        mAdapter4 = new PageOnePagerAdapter4(list4, getContext());
+        mViewPager4.setAdapter(mAdapter4);
+
+        //ViewPager5
+        mViewPager5 = ((ClickableViewPager) view.findViewById(R.id.live_view_pager5));
+        mViewPager5.setPageMargin(1);
+        List<Integer> list5 = new ArrayList<Integer>();
+        for(int i : pictures5){list5.add(i);}
+        mAdapter5 = new PageOnePagerAdapter5(list5, getContext());
+        mViewPager5.setAdapter(mAdapter5);
+
+        //ViewPager6
+        mViewPager6 = ((ClickableViewPager) view.findViewById(R.id.live_view_pager6));
+        mViewPager6.setPageMargin(5);
+        List<Integer> list6 = new ArrayList<Integer>();
+        for(int i : pictures6){list6.add(i);}
+        mAdapter6 = new PageOnePagerAdapter6(list6, getContext());
+        mViewPager6.setAdapter(mAdapter6);
+
         //TODO: 添加ImageView
         addImageView();
         mAdapter.notifyDataSetChanged();
+        mAdapter2.notifyDataSetChanged();
+        mAdapter3.notifyDataSetChanged();
+        mAdapter4.notifyDataSetChanged();
+        mAdapter5.notifyDataSetChanged();
+        mAdapter6.notifyDataSetChanged();
+
         //设置底部4个小点
         setBottomIndicator(view);
 
-        addView(view);
+        //mViewPager2 OnClick
+        mViewPager2.setOnItemClickListener(new ClickableViewPager.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                KLog.d("你現在按的是",position);
+            }
+        });
 
+        //mViewPager3 OnClick
+        mViewPager3.setOnItemClickListener(new ClickableViewPager.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                KLog.d("你現在按的是",position);
+            }
+        });
+
+        //mViewPager4 OnClick
+        mViewPager4.setOnItemClickListener(new ClickableViewPager.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                KLog.d("你現在按的是",position);
+            }
+        });
+
+        //mViewPager5 OnClick
+        mViewPager5.setOnItemClickListener(new ClickableViewPager.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                KLog.d("你現在按的是",position);
+            }
+        });
+
+        return view;
     }
 
     @Override
-    public void refresh() {
-
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 
-    private void addImageView(){
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    private void addImageView( ){
+
         ImageView view0 = new ImageView(getContext());
         view0.setImageResource(R.drawable.p1);
         ImageView view1 = new ImageView(getContext());
@@ -90,8 +205,8 @@ public class PageOne extends PageView implements ViewPager.OnPageChangeListener,
         mItems.add(view0);
         mItems.add(view1);
         mItems.add(view2);
-
     }
+
 
     private void setBottomIndicator(View view) {
         //获取指示器(下面三个小点)
@@ -115,7 +230,7 @@ public class PageOne extends PageView implements ViewPager.OnPageChangeListener,
         }
 
         //让其在最大值的中间开始滑动, 一定要在 mBottomImages初始化之前完成
-        int mid = MyPagerAdapter.MAX_SCROLL_VALUE / 2;
+        int mid = PageOnePagerAdapter.MAX_SCROLL_VALUE / 2;
         mViewPager.setCurrentItem(mid);
         currentViewPagerItem = mid;
 
@@ -213,6 +328,5 @@ public class PageOne extends PageView implements ViewPager.OnPageChangeListener,
 
         }
     }
-
 
 }

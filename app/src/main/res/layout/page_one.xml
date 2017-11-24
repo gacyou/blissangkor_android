@@ -10,7 +10,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -21,6 +23,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"></LinearLayout>
 
                 <SearchView
                     android:id="@+id/SearchView"
@@ -81,11 +88,134 @@
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp">
-                    <android.support.v4.view.ViewPager
+                    android:layout_height="190dp"
+                    android:clipChildren="false">
+
+                    <com.blissangkor_android.utils.ClickableViewPager
                         android:id="@+id/live_view_pager2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clipChildren="false" />
+                </FrameLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="獨家主題"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="查看全部" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:clipChildren="false">
+
+                    <com.blissangkor_android.utils.ClickableViewPager
+                        android:id="@+id/live_view_pager3"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:clipChildren="false">
+
+                    </com.blissangkor_android.utils.ClickableViewPager>
+                </FrameLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="熱門行程"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/button3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="查看全部" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:clipChildren="false">
+
+                    <com.blissangkor_android.utils.ClickableViewPager
+                        android:id="@+id/live_view_pager4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipChildren="false">
+
+                    </com.blissangkor_android.utils.ClickableViewPager>
+                </FrameLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="推薦住宿"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="查看全部" />
+                </RelativeLayout>
+
+                <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:clipChildren="false">
+
+                <com.blissangkor_android.utils.ClickableViewPager
+                    android:id="@+id/live_view_pager5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipChildren="false">
+
+                </com.blissangkor_android.utils.ClickableViewPager>
+            </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:layout_marginTop="30dp"
+                    android:clipChildren="false">
+
+                    <com.blissangkor_android.utils.ClickableViewPager
+                        android:id="@+id/live_view_pager6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipChildren="false">
+
+                    </com.blissangkor_android.utils.ClickableViewPager>
                 </FrameLayout>
 
             </LinearLayout>
