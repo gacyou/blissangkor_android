@@ -3,4 +3,21 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"></LinearLayout>
+
+    <SearchView
+        android:id="@+id/SearchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="輸入目的地，景點或活動..."/>
+
+    <ExpandableListView
+        android:id="@+id/ExList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

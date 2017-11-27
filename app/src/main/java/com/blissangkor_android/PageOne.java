@@ -1,6 +1,8 @@
 package com.blissangkor_android;
 
+import android.app.ActionBar;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.os.Handler;
@@ -8,7 +10,9 @@ import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
@@ -63,27 +67,30 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
     private Thread mThread;
 
     private static final int[] pictures = { R.drawable.p2, R.drawable.p2, R.drawable.p1 };
-    private static final int[] pictures2 = { R.drawable.p1, R.drawable.p1, R.drawable.p1 };
-    private static final int[] pictures3 = { R.drawable.p1, R.drawable.p2, R.drawable.p1 };
-    private static final int[] pictures4 = { R.drawable.p2, R.drawable.p2, R.drawable.p1 };
-    private static final int[] pictures5 = { R.drawable.p1, R.drawable.p2, R.drawable.p2 };
-    private static final int[] pictures6 = { R.drawable.p2, R.drawable.p2, R.drawable.p2 };
+    private static final int[] pictures2 = { R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338 };
+    private static final int[] pictures3 = { R.drawable.p955x416, R.drawable.p955x416, R.drawable.p955x416 };
+    private static final int[] pictures4 = { R.drawable.p955x416, R.drawable.p955x416, R.drawable.p955x416 };
+    private static final int[] pictures5 = { R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338 };
+    private static final int[] pictures6 = { R.drawable.ad2, R.drawable.ad2, R.drawable.ad2 };
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.page_one, container, false);
-
         mSearchView = ((SearchView) view.findViewById(R.id.SearchView));
         mSearchView.setIconifiedByDefault(false);
 
+
         //不會動的單張廣告圖
         ImageView imageView = ((ImageView)view.findViewById(R.id.imageView));
-        imageView.setImageResource(R.drawable.p2);
+        imageView.setImageResource(R.drawable.ad);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
 
         mHandler = new MyHandler(this);
 
         //配置轮播图ViewPager
+
         mViewPager = ((ViewPager) view.findViewById(R.id.live_view_pager));
         mItems = new ArrayList<>();
         mAdapter = new PageOnePagerAdapter(mItems, getContext());
@@ -94,7 +101,8 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
 
         //ViewPager2
         mViewPager2 = ((ClickableViewPager) view.findViewById(R.id.live_view_pager2));
-        mViewPager2.setPageMargin(40);
+        mViewPager2.setOffscreenPageLimit(4);
+        mViewPager2.setPageMargin(1);
         List<Integer> list2 = new ArrayList<Integer>();
         for(int i : pictures2){list2.add(i);}
         mAdapter2 = new PageOnePagerAdapter2(list2, getContext());
@@ -102,7 +110,7 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
 
         //ViewPager3
         mViewPager3 = ((ClickableViewPager) view.findViewById(R.id.live_view_pager3));
-        mViewPager3.setPageMargin(40);
+        mViewPager3.setPageMargin(1);
         List<Integer> list3 = new ArrayList<Integer>();
         for(int i : pictures3){list3.add(i);}
         mAdapter3 = new PageOnePagerAdapter3(list3, getContext());
@@ -110,7 +118,7 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
 
         //ViewPager4
         mViewPager4 = ((ClickableViewPager) view.findViewById(R.id.live_view_pager4));
-        mViewPager4.setPageMargin(40);
+        mViewPager4.setPageMargin(10);
         List<Integer> list4 = new ArrayList<Integer>();
         for(int i : pictures4){list4.add(i);}
         mAdapter4 = new PageOnePagerAdapter4(list4, getContext());
@@ -126,7 +134,7 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
 
         //ViewPager6
         mViewPager6 = ((ClickableViewPager) view.findViewById(R.id.live_view_pager6));
-        mViewPager6.setPageMargin(5);
+        mViewPager6.setPageMargin(1);
         List<Integer> list6 = new ArrayList<Integer>();
         for(int i : pictures6){list6.add(i);}
         mAdapter6 = new PageOnePagerAdapter6(list6, getContext());
@@ -192,11 +200,11 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
     private void addImageView( ){
 
         ImageView view0 = new ImageView(getContext());
-        view0.setImageResource(R.drawable.p1);
+        view0.setImageResource(R.drawable.p1080x445);
         ImageView view1 = new ImageView(getContext());
-        view1.setImageResource(R.drawable.p1);
+        view1.setImageResource(R.drawable.p1080x445);
         ImageView view2 = new ImageView(getContext());
-        view2.setImageResource(R.drawable.p1);
+        view2.setImageResource(R.drawable.p1080x445);
 
         view0.setScaleType(ImageView.ScaleType.CENTER_CROP);
         view1.setScaleType(ImageView.ScaleType.CENTER_CROP);
@@ -215,7 +223,7 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
         mBottomImages = new ImageView[mItems.size()];
         for (int i = 0; i < mBottomImages.length; i++) {
             ImageView imageView = new ImageView(getContext());
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(20, 20);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(6, 6);
             params.setMargins(5, 0, 5, 0);
             imageView.setLayoutParams(params);
             //如果当前是第一个 设置为选中状态

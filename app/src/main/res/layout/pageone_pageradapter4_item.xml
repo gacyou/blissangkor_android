@@ -2,107 +2,123 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="170dp">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="190dp"
-        android:layout_margin="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
         android:descendantFocusability="blocksDescendants"
         android:orientation="vertical">
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:orientation="vertical">
 
             <FrameLayout
                 android:id="@+id/linearleft_mid"
                 android:layout_width="match_parent"
-                android:layout_height="100dp">
+                android:layout_height="104dp">
 
                 <ImageView
                     android:id="@+id/listImage"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@drawable/p1"
+                    android:background="@drawable/p955x416"
                     android:scaleType="matrix" />
 
                 <TextView
                     android:id="@+id/txt"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="right"
                     android:layout_marginTop="10dp"
                     android:background="@android:color/holo_orange_light"
                     android:paddingLeft="5dp"
                     android:paddingTop="2dp"
                     android:text="NT$"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18dip" />
+                    android:textColor="@android:color/background_light" />
 
                 <TextView
                     android:id="@+id/txt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right|center_vertical"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="30dp"
                     android:text="1,000,000"
                     android:textColor="@android:color/background_light"
-                    android:textSize="18sp"
                     android:textStyle="bold" />
             </FrameLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:layout_below="@+id/linearleft_mid"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp">
 
-                <TextView
-                    android:id="@+id/listTitle"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
                     android:layout_weight="1"
-                    android:text="[喜哈之旅]喜馬拉雅+哈薩克馬拉松 "
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/listText"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="全程跑步參加,讓腳體驗到深層痠痛......" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="聖母峰頂" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="主題玩法" />
+                        android:id="@+id/listTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="[喜哈之旅]喜馬拉雅+哈薩克馬拉松 "
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:text="1,000人參加" />
-                </RelativeLayout>
-            </LinearLayout>
+                        android:id="@+id/listText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="全程跑步參加,讓腳體驗到深層痠痛......"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="聖母峰頂"
+                        android:textSize="12sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="主題玩法"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:text="1,000人參加"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
 
         </RelativeLayout>
 

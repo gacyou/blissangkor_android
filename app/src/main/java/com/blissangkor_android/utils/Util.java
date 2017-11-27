@@ -1,5 +1,6 @@
 package com.blissangkor_android.utils;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -7,6 +8,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.util.DisplayMetrics;
 
 /**
  * Created by Gacyou on 2017/11/22.
@@ -34,5 +36,6 @@ public class Util {
         canvas.drawBitmap(bitmap, rect, rect, paint);
         return output;
     }
+
 
 }

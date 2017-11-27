@@ -43,7 +43,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private TabLayout mTablayout;
-    private Toolbar mToolbar;
     private NoScrollViewPager mViewPager;
 
     private FragmentAdapter adapter;
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         add(new PageFive());
         add(new PageSix());
     }};
-
+    
 
 
     @Override

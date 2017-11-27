@@ -6,13 +6,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:background="@android:color/white"
-        android:minHeight="?attr/actionBarSize" />
+
     <com.blissangkor_android.utils.NoScrollViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
