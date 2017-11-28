@@ -58,9 +58,10 @@ public class ExListAdapter extends BaseExpandableListAdapter {
 
   /* 設置內容 */
         TextView txtListChild = (TextView) convertView.findViewById(R.id.textView);
+        TextView textIcon = (TextView) convertView.findViewById(R.id.textView2);
 
         txtListChild.setText(childText);
-
+        textIcon.setTypeface(FontManager.getTypeface(context,FontManager.FONTAWESOME));
         return convertView;
     }
 

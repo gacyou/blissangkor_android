@@ -22,7 +22,7 @@ import java.util.List;
 public class PageTwo_p1 extends android.support.v4.app.Fragment{
 
     private ListView list ;
-    private static final int[] pictures = { R.drawable.p2, R.drawable.p2, R.drawable.p1 };
+    private static final int[] pictures = { R.drawable.p1080x445, R.drawable.p1080x445, R.drawable.p1080x445 };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

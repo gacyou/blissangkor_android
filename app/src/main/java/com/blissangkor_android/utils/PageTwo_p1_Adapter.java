@@ -65,7 +65,7 @@ public class PageTwo_p1_Adapter extends BaseAdapter {
         }
 
         viewTag.img.setImageResource(mItems.get(i));
-
+        viewTag.img.setScaleType(ImageView.ScaleType.FIT_CENTER);
         return convertView;
     }
 

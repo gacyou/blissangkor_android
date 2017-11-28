@@ -16,6 +16,7 @@ public class ClickableViewPager extends ViewPager {
 
     private OnItemClickListener mOnItemClickListener;
 
+
     public ClickableViewPager(Context context) {
         super(context);
         setup();

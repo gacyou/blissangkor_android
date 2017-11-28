@@ -337,4 +337,17 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
         }
     }
 
+
+    @Override
+    public void onHiddenChanged(boolean hidd) {
+        if (hidd) {
+            //隐藏时所作的事情
+            mHandler.removeCallbacksAndMessages(null);
+        } else {
+            //显示时所作的事情
+            mHandler.removeCallbacksAndMessages(null);
+        }
+    }
+
+
 }

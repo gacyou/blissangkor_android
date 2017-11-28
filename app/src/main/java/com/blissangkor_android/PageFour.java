@@ -22,7 +22,7 @@ import static com.blissangkor_android.R.attr.toolbarId;
  * Created by Gacyou on 2017/11/16.
  */
 
-public class PageFour  extends Fragment {
+public class PageFour  extends android.support.v4.app.Fragment {
 
     Activity mActivity;
     AppCompatActivity mAppCompatActivity;
@@ -35,12 +35,16 @@ public class PageFour  extends Fragment {
 
         Spinner spin = (Spinner) view.findViewById(R.id.spinner);
         Spinner spin2 = (Spinner) view.findViewById(R.id.spinner2);
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.program_toolbar);
+
         final String[] list = {"請選擇", "中國", "日本", "美國", "法國"};
         final String[] list2 = {"請選擇", "A區", "B區", "C區", "區區"};
         ArrayAdapter<String> List = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, list);
         ArrayAdapter<String> List2 = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, list2);
         spin.setAdapter(List);
         spin2.setAdapter(List2);
+
+        toolbar.setTitle("旅伴系統");
 
         return view;
     }

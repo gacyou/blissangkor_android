@@ -10,9 +10,10 @@
     <com.blissangkor_android.utils.NoScrollViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:scrollbars="none"></com.blissangkor_android.utils.NoScrollViewPager>
+
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"
@@ -21,8 +22,8 @@
         app:tabGravity="fill"
         app:tabIndicatorHeight="0dp"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="#FF4081"
-        app:tabTextColor="#000">
-    </android.support.design.widget.TabLayout>
+        app:tabSelectedTextColor="@android:color/holo_blue_dark"
+        app:tabTextColor="#000"></android.support.design.widget.TabLayout>
+
 
 </LinearLayout>

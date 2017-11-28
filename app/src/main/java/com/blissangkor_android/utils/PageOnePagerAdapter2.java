@@ -45,7 +45,7 @@ public class PageOnePagerAdapter2 extends PagerAdapter {
         // 佈局元件內容
         ImageView imageView = (ImageView)itemView.findViewById(R.id.image);
         imageView.setImageResource(mItems.get(position));
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 
         ViewParent viewParent = itemView.getParent();
         if (viewParent != null) {
