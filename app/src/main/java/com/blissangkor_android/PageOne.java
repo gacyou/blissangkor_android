@@ -242,23 +242,25 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
         mViewPager.setCurrentItem(mid);
         currentViewPagerItem = mid;
 
-        //定时发送消息
-        mThread = new Thread(){
-            @Override
-            public void run() {
-                super.run();
-                while (true) {
-                    mHandler.sendEmptyMessage(0);
-                    try {
-                        Thread.sleep(PageOne.VIEW_PAGER_DELAY);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
 
-            }
-        };
-        mThread.start();
+
+            //定时发送消息
+            mThread = new Thread() {
+                @Override
+                public void run() {
+                    while (true) {
+                        mHandler.sendEmptyMessage(0);
+                        try {
+                            Thread.sleep(PageOne.VIEW_PAGER_DELAY);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                }
+            };
+            mThread.start();
+
     }
 
 
@@ -342,10 +344,10 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
     public void onHiddenChanged(boolean hidd) {
         if (hidd) {
             //隐藏时所作的事情
-            mHandler.removeCallbacksAndMessages(null);
+
         } else {
             //显示时所作的事情
-            mHandler.removeCallbacksAndMessages(null);
+
         }
     }
 
