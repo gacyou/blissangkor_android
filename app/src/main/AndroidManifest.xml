@@ -26,6 +26,10 @@
             android:windowSoftInputMode="stateHidden"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".Customer_Service"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
 
     </application>
 

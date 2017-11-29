@@ -1,6 +1,10 @@
 package com.blissangkor_android;
 
 
+import android.nfc.tech.NfcV;
+import android.os.Handler;
+import android.os.Message;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,7 +22,10 @@ import com.blissangkor_android.utils.FontManager;
 import com.blissangkor_android.utils.FragmentAdapter;
 import com.blissangkor_android.utils.NoScrollViewPager;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+
+import static com.blissangkor_android.utils.Setting.abc;
 
 /**
  *　　　　　　　　┏┓　　　┏┓+ +
@@ -46,7 +54,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private TabLayout mTablayout;
-    private NoScrollViewPager mViewPager;
+    public  NoScrollViewPager Nvpager;
 
     private FragmentAdapter adapter;
     private long clickTime = 0; // 第一次点击的时间
@@ -57,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         add("");
         add("");
         add("");
-        add("");
+        add("旅伴系統");
         add("");
         add("");
     }};
@@ -77,14 +85,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mViewPager = (NoScrollViewPager) findViewById(R.id.pager);
+        Nvpager = (NoScrollViewPager) findViewById(R.id.pager);
         mTablayout = (TabLayout) findViewById(R.id.tabs);
 
         adapter = new FragmentAdapter(getSupportFragmentManager(), titleList, fragmentList);
-        mViewPager.setAdapter(adapter);
-        mTablayout.setupWithViewPager(mViewPager, true);
+        Nvpager.setAdapter(adapter);
+        mTablayout.setupWithViewPager(Nvpager, true);
         mTablayout.setTabsFromPagerAdapter(adapter);
-
 
         tab1 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tab1.setTypeface(FontManager.getTypeface(this,FontManager.FONTAWESOME));
@@ -200,6 +207,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
     }
 
     @Override
@@ -225,5 +235,6 @@ public class MainActivity extends AppCompatActivity {
             this.finish();
         }
     }
+
 
 }

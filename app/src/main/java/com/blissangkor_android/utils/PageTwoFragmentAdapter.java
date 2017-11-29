@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
@@ -15,8 +17,13 @@ public class PageTwoFragmentAdapter extends FragmentStatePagerAdapter {
     private ArrayList<String> titleList;
     private ArrayList<Fragment> fragmentList;
 
+    private FragmentTransaction mCurTransaction = null;
+    private  FragmentManager mFragmentManager;
+    private ArrayList<Fragment.SavedState> mSavedState = new ArrayList<Fragment.SavedState>();
+
     public PageTwoFragmentAdapter(FragmentManager fm, ArrayList<String> titleList, ArrayList<Fragment> fragmentList) {
         super(fm);
+        this.mFragmentManager = fm;
         this.titleList = titleList;
         this.fragmentList = fragmentList;
     }
@@ -35,4 +42,21 @@ public class PageTwoFragmentAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         return titleList.get(position);
     }
+
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        Fragment fragment = (Fragment)object;
+
+        if (mCurTransaction == null) {
+            mCurTransaction = mFragmentManager.beginTransaction();
+        }
+        while (mSavedState.size() <= position) {
+            mSavedState.add(null);
+        }
+        mSavedState.set(position, mFragmentManager.saveFragmentInstanceState(fragment));
+        fragmentList.set(position, null);
+
+        mCurTransaction.remove(fragment);
+    }
+
 }

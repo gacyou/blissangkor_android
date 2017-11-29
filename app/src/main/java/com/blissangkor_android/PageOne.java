@@ -1,8 +1,11 @@
 package com.blissangkor_android;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.os.Handler;
@@ -12,12 +15,16 @@ import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 
 import com.blissangkor_android.utils.ClickableViewPager;
+import com.blissangkor_android.utils.NoScrollViewPager;
 import com.blissangkor_android.utils.PageOnePagerAdapter;
 import com.blissangkor_android.utils.PageOnePagerAdapter2;
 import com.blissangkor_android.utils.PageOnePagerAdapter3;
@@ -25,11 +32,14 @@ import com.blissangkor_android.utils.PageOnePagerAdapter3;
 import com.blissangkor_android.utils.PageOnePagerAdapter4;
 import com.blissangkor_android.utils.PageOnePagerAdapter5;
 import com.blissangkor_android.utils.PageOnePagerAdapter6;
+import com.blissangkor_android.utils.PageTwoFragmentAdapter;
 import com.socks.library.KLog;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.blissangkor_android.utils.Setting.abc;
 
 /**
  * Created by Gacyou on 2017/11/15.
@@ -51,6 +61,7 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
     private LinearLayout mBottomLiner;
 
     private ViewPager mViewPager;
+
     private ClickableViewPager mViewPager2;
     private ClickableViewPager mViewPager3;
     private ClickableViewPager mViewPager4;
@@ -58,6 +69,7 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
     private ClickableViewPager mViewPager6;
 
     private SearchView mSearchView;
+    private Button btn5;
 
     private int currentViewPagerItem;
 
@@ -73,19 +85,27 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
     private static final int[] pictures5 = { R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338 };
     private static final int[] pictures6 = { R.drawable.ad2, R.drawable.ad2, R.drawable.ad2 };
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.page_one, container, false);
         mSearchView = ((SearchView) view.findViewById(R.id.SearchView));
         mSearchView.setIconifiedByDefault(false);
 
-
         //不會動的單張廣告圖
-        ImageView imageView = ((ImageView)view.findViewById(R.id.imageView));
+        ImageView imageView = ((ImageView) view.findViewById(R.id.imageView));
         imageView.setImageResource(R.drawable.ad);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
+        btn5 = (Button) view.findViewById(R.id.button5);
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent();
+                intent.setClass(getActivity() , Customer_Service.class);
+                startActivity(intent);
+            }
+        });
 
         mHandler = new MyHandler(this);
 

@@ -7,4 +7,7 @@ package com.blissangkor_android.utils;
 public class Setting {
 
     public static Boolean IsCompanionFrist = true;
+
+    public static Boolean abc = false;
+
 }
