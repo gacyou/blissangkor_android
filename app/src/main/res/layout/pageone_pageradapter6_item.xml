@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:background="@drawable/p1"
+                    android:background="@drawable/p358x338"
                     android:scaleType="matrix" />
 
             </FrameLayout>

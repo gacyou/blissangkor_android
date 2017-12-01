@@ -1,11 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView8"
+    <include
+        android:id="@+id/program_toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignBottom="@+id/program_toolbar"
+        android:background="@drawable/toolbar_dropshadow"
+        />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
-</LinearLayout>
+        android:layout_above="@+id/linearLayout"
+        android:layout_below="@+id/program_toolbar"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="輸入目的地，景點或活動...">
+
+        </SearchView>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignBottom="@+id/program_toolbar"
+            android:background="?attr/colorAccent" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="常見問題"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignBottom="@+id/program_toolbar"
+            android:background="?attr/colorAccent" />
+
+
+        <ListView
+            android:id="@+id/textList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="5dp"
+            android:orientation="vertical">
+
+        </ListView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignTop="@+id/linearLayout"
+        android:background="@drawable/toolbar_shadow_top" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="諮詢表單" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="諮詢紀錄" />
+    </LinearLayout>
+
+</RelativeLayout>

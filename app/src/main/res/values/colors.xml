@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorTab">#ff8640</color>
     <color name="black">#000000</color>
+    <color name="accent_material_dark">#ebb270</color>
 </resources>
