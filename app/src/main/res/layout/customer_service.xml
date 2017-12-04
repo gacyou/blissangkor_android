@@ -23,17 +23,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/linearLayout"
-        android:layout_below="@+id/program_toolbar"
         android:orientation="vertical"
         android:focusable="true"
-        android:focusableInTouchMode="true">
+        android:focusableInTouchMode="true"
+        android:layout_below="@+id/program_toolbar"
+        android:layout_alignParentStart="true">
 
         <SearchView
             android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:queryHint="輸入目的地，景點或活動...">
+            android:queryHint="@string/search_bar">
 
         </SearchView>
 
@@ -48,7 +48,7 @@
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="常見問題"
+            android:text="@string/problem"
             android:textSize="18sp" />
 
         <View
@@ -88,14 +88,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="諮詢表單" />
+            android:text="@string/qa_list" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="諮詢紀錄" />
+            android:text="@string/qa_log" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -24,7 +24,7 @@ public class Customer_Service extends AppCompatActivity {
     private  String[] textListStrings;
     private ListView lv;
     private SearchView sv;
-    private Button btn;
+    private Button btn, btn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +51,16 @@ public class Customer_Service extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent i = new Intent(view.getContext(), Customer_QApage.class);
+                startActivity(i);
+            }
+        });
+
+        btn2 = (Button) findViewById(R.id.button2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(view.getContext(), Customer_QALog.class);
                 startActivity(i);
             }
         });

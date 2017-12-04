@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="諮詢中心" />
+            android:text="@string/qa" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginBottom="2dp"
                         android:layout_marginTop="2dp"
-                        android:queryHint="輸入目的地，景點或活動...">
+                        android:queryHint="@string/search_bar">
 
                     </SearchView>
 
@@ -106,7 +106,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:text="熱門目的地"
+                            android:text="@string/hot_local"
                             android:textSize="18sp" />
 
                     </RelativeLayout>
@@ -140,7 +140,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:text="獨家主題"
+                            android:text="@string/exclusive"
                             android:textSize="18sp" />
 
                     </RelativeLayout>
@@ -175,7 +175,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:text="熱門行程"
+                            android:text="@string/hot_stroke"
                             android:textSize="18sp" />
 
                     </RelativeLayout>
@@ -210,7 +210,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:text="推薦住宿"
+                            android:text="@string/recommend_hotel"
                             android:textSize="18sp" />
 
                     </RelativeLayout>

@@ -37,6 +37,17 @@
             android:configChanges="orientation|keyboardHidden"
             android:parentActivityName=".Customer_Service"/>
 
+        <activity android:name=".Customer_QALog"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base_NoAction"
+            android:configChanges="orientation|keyboardHidden"
+            android:parentActivityName=".Customer_Service"/>
+
+        <activity android:name=".utils.PageSix_AccountSetting"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base_NoAction"
+            android:configChanges="orientation|keyboardHidden"
+            android:parentActivityName=".MainActivity"/>
 
     </application>
 

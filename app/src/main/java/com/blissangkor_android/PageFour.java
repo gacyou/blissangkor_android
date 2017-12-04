@@ -45,7 +45,7 @@ public class PageFour  extends android.support.v4.app.Fragment {
         spin.setAdapter(List);
         spin2.setAdapter(List2);
 
-        toolbar.setTitle("旅伴系統");
+        toolbar.setTitle(R.string.Companion);
         /*
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);

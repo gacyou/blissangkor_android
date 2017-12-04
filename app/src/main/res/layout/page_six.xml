@@ -11,27 +11,45 @@
         android:layout_height="200dp">
 
         <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="false"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="40dp"
-            android:layout_toRightOf="@+id/line"
-            android:text="願望清單"
-            android:textSize="18sp" />
-
-        <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="false"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="40dp"
-            android:text="我的訂單"
-            android:textSize="18sp" />
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="TextView"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="50dp"
+            android:background="@android:color/white"
+            android:text="@string/my_Order" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView6"
+            android:layout_toEndOf="@+id/textView3"
+            android:text="TextView"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button"
+            android:layout_marginLeft="45dp"
+            android:layout_toEndOf="@+id/textView3"
+            android:background="@android:color/white"
+            android:text="@string/wish_list" />
 
         <LinearLayout
             android:id="@+id/line"
@@ -91,7 +109,7 @@
                 android:layout_alignParentEnd="false"
                 android:layout_marginRight="40dp"
                 android:layout_toLeftOf="@+id/textView2"
-                android:text="積分"
+                android:text="@string/integral"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
@@ -104,7 +122,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="10dp"
-                android:text="優惠碼"
+                android:text="@string/coupon_code"
                 android:textAlignment="center"
                 android:textColor="@android:color/white" />
 
@@ -128,7 +146,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/p1" />
+             />
 
         <TextView
             android:id="@+id/textView3"

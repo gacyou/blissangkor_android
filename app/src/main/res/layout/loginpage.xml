@@ -60,14 +60,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="記住我" />
+                    android:text="@string/rember_me" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="忘記密碼?" />
+                    android:text="@string/forget_pssword" />
 
             </LinearLayout>
 
@@ -76,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="登入" />
+                android:text="@string/login" />
 
         </LinearLayout>
 

@@ -78,7 +78,7 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
     private MyHandler mHandler;
     private Thread mThread;
 
-    private static final int[] pictures = { R.drawable.p2, R.drawable.p2, R.drawable.p1 };
+    private static final int[] pictures = { };
     private static final int[] pictures2 = { R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338 };
     private static final int[] pictures3 = { R.drawable.p955x416, R.drawable.p955x416, R.drawable.p955x416 };
     private static final int[] pictures4 = { R.drawable.p955x416, R.drawable.p955x416, R.drawable.p955x416 };

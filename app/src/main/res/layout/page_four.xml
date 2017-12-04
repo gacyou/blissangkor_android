@@ -19,7 +19,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        app:srcCompat="@drawable/p2" />
+        android:background="@drawable/p1080x565" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="尋找旅伴"
+            android:text="@string/search_Companion"
             android:textAlignment="viewStart"
             android:textSize="30sp" />
 
@@ -38,7 +38,7 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="國家" />
+            android:text="@string/country" />
 
         <Spinner
             android:id="@+id/spinner"
@@ -49,7 +49,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="地區" />
+            android:text="@string/lacal" />
 
         <Spinner
             android:id="@+id/spinner2"
@@ -66,7 +66,7 @@
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="添加我的行程"
+            android:text="@string/addMy_stroke"
             android:textSize="30sp" />
 
         <RelativeLayout
@@ -81,7 +81,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:text="我要尋找旅伴"
+                android:text="@string/i_want_companion"
                 android:textSize="18sp" />
 
             <Button
@@ -89,7 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="添加我的旅程" />
+                android:text="@string/add" />
         </RelativeLayout>
     </LinearLayout>
 

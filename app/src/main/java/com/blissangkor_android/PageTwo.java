@@ -30,10 +30,6 @@ public class PageTwo extends android.support.v4.app.Fragment {
     private NoScrollViewPager mViewPager;
     private PageTwoFragmentAdapter adapter;
 
-    private ArrayList<String> titleList = new ArrayList<String>() {{
-        add("熱門目的地");
-        add("全部");
-    }};
     private ArrayList<Fragment> fragmentList = new ArrayList<Fragment>() {{
         add(new PageTwo_p1());
         add(new PageTwo_p2());
@@ -44,6 +40,12 @@ public class PageTwo extends android.support.v4.app.Fragment {
         View view = inflater.inflate(R.layout.page_two, container, false);
 
         mActivity = getActivity();
+
+         ArrayList<String> titleList = new ArrayList<String>() {{
+            add((String) mActivity.getResources().getText(R.string.hot_local));
+            add((String) mActivity.getResources().getText(R.string.all));
+        }};
+
         mTabs = (android.support.design.widget.TabLayout) view.findViewById(R.id.tabs);
         mViewPager = (NoScrollViewPager) view.findViewById(R.id.viewpager);
 

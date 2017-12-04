@@ -1,8 +1,11 @@
 package com.blissangkor_android;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +13,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.blissangkor_android.utils.FontManager;
+import com.blissangkor_android.utils.PageSix_AccountSetting;
 
 import static com.blissangkor_android.utils.Util.getRoundedCornerBitmap;
 
@@ -22,22 +29,36 @@ import static com.blissangkor_android.utils.Util.getRoundedCornerBitmap;
 
 public class PageSix extends android.support.v4.app.Fragment {
 
-    public String[] str = {"帳戶設定","諮詢中心","更改語言/貨幣","登出帳號"};
+    private String[] str;
+    private TextView tx6, tx7;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.page_six, container, false);
+
+        str = new String[]{(String) this.getResources().getText(R.string.account_setting),
+                (String) this.getResources().getText(R.string.qa),
+                (String) this.getResources().getText(R.string.language),
+                (String) this.getResources().getText(R.string.logout)};
 
         ImageView mImg1 = (ImageView) view.findViewById(R.id.image);
         ListView mlist = (ListView) view.findViewById(R.id.list);
 
         mImg1.setImageBitmap(getRoundedCornerBitmap(
                 BitmapFactory.decodeResource(
-                        getResources(), R.drawable.p1),360.0f));
+                        getResources(), R.drawable.people),360.0f));
 
         ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, str);
         mlist.setAdapter(adapter);
         mlist.setOnItemClickListener(onClickListView);
+
+        tx6 = (TextView) view.findViewById(R.id.textView6);
+        tx6.setTypeface(FontManager.getTypeface(view.getContext(),FontManager.FONTAWESOME));
+        tx6.setText(R.string.fa_bookmark_o);
+
+        tx7 = (TextView) view.findViewById(R.id.textView7);
+        tx7.setTypeface(FontManager.getTypeface(view.getContext(),FontManager.FONTAWESOME));
+        tx7.setText(R.string.fa_heart_o);
 
         return view;
     }
@@ -46,8 +67,78 @@ public class PageSix extends android.support.v4.app.Fragment {
     private AdapterView.OnItemClickListener onClickListView = new AdapterView.OnItemClickListener(){
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            // Toast 快顯功能 第三個參數 Toast.LENGTH_SHORT 2秒  LENGTH_LONG 5秒
-            Toast.makeText(getContext(),"點選第 "+(position +1) +" 個 \n內容："+str[position], Toast.LENGTH_SHORT).show();
+
+            switch( position ){
+                case 0:
+
+                    Intent i = new Intent(getContext(), PageSix_AccountSetting.class);
+                    getContext().startActivity(i);
+
+                    break;
+                case 1:
+
+                    Intent i2 = new Intent(getContext(), Customer_Service.class);
+                    getContext().startActivity(i2);
+
+                    break;
+                case 2:
+
+                    LayoutInflater inflater = getActivity().getLayoutInflater();
+                    View v = inflater.inflate(R.layout.language_dailog, null);
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle((String) getActivity().getResources().getText(R.string.language))
+                            .setView(v)
+                            .setPositiveButton((String) getActivity().getResources().getText(R.string.yes), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    })
+                            .setNegativeButton((String) getActivity().getResources().getText(R.string.no), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    });
+
+                    Spinner spin = (Spinner) v.findViewById(R.id.spinner);
+                    Spinner spin2 = (Spinner) v.findViewById(R.id.spinner2);
+                    final String[] list = {"請選擇", "繁中", "簡中", "英文"};
+                    final String[] list2 = {"請選擇", "NT", "CNY", "USD"};
+                    ArrayAdapter<String> List = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, list);
+                    ArrayAdapter<String> List2 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, list2);
+                    spin.setAdapter(List);
+                    spin2.setAdapter(List2);
+
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+
+                    break;
+                case 3:
+
+                    new AlertDialog.Builder(getActivity())
+                            .setTitle((String) getActivity().getResources().getText(R.string.logout))//設定視窗標題
+                            .setMessage((String) getActivity().getResources().getText(R.string.isLogout))//設定顯示的文字
+                            .setPositiveButton((String) getActivity().getResources().getText(R.string.yes),new DialogInterface.OnClickListener(){
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent i = new Intent(getContext(), LoginPage.class);
+                                    getContext().startActivity(i);
+                                    getActivity().finish();
+                                }
+                            })
+                            .setNegativeButton((String) getActivity().getResources().getText(R.string.no), new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+
+                                }
+                            })
+                            .show();//呈現對話視窗
+
+                    break;
+            }
+
         }
     };
 

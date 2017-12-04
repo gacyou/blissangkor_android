@@ -14,7 +14,7 @@
         android:id="@+id/SearchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="輸入目的地，景點或活動..."/>
+        android:queryHint="@string/search_bar"/>
 
     <ExpandableListView
         android:id="@+id/ExList"
