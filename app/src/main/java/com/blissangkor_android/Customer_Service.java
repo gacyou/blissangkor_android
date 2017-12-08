@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import com.blissangkor_android.utils.customerTextListAdapter;
 
@@ -24,17 +25,21 @@ public class Customer_Service extends AppCompatActivity {
     private  String[] textListStrings;
     private ListView lv;
     private SearchView sv;
-    private Button btn, btn2;
+    private Button btn, btn2, toolbtn;
+    private TextView tooltext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customer_service);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.program_toolbar);
-        toolbar.setTitle("諮詢中心");
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        toolbtn = (Button) findViewById(R.id.toolbar_button);
+
+
+        tooltext = (TextView) findViewById(R.id.toolbar_text);
+        tooltext.setText("諮詢中心");
 
 
         sv = (SearchView)findViewById(R.id.searchView);

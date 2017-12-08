@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -13,13 +14,23 @@ import android.widget.TextView;
  */
 
 public class PageThree  extends android.support.v4.app.Fragment {
+
+    private TextView tooltext;
+    private Button   toolbtn;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.pagethree, container, false);
 
-        Toolbar toolbar = (Toolbar) view.findViewById(R.id.program_toolbar);
-        toolbar.setTitle((String) view.getResources().getText(R.string.shopping_car));
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
 
+        toolbtn = (Button) view.findViewById(R.id.toolbar_button);
+        toolbtn.setVisibility(View.GONE);
+
+
+        tooltext = (TextView) view.findViewById(R.id.toolbar_text);
+        tooltext.setText(R.string.shopping_car);
+        
         return view;
     }
 

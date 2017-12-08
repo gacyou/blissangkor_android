@@ -15,7 +15,9 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import static com.blissangkor_android.R.attr.toolbarId;
 
@@ -27,6 +29,8 @@ public class PageFour  extends android.support.v4.app.Fragment {
 
     Activity mActivity;
     AppCompatActivity mAppCompatActivity;
+    private TextView tooltext;
+    private Button   toolbtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,7 +40,15 @@ public class PageFour  extends android.support.v4.app.Fragment {
 
         Spinner spin = (Spinner) view.findViewById(R.id.spinner);
         Spinner spin2 = (Spinner) view.findViewById(R.id.spinner2);
-        Toolbar toolbar = (Toolbar) view.findViewById(R.id.program_toolbar);
+
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+
+        toolbtn = (Button) view.findViewById(R.id.toolbar_button);
+        toolbtn.setVisibility(View.GONE);
+
+
+        tooltext = (TextView) view.findViewById(R.id.toolbar_text);
+        tooltext.setText(R.string.Companion);
 
         final String[] list = {"請選擇", "中國", "日本", "美國", "法國"};
         final String[] list2 = {"請選擇", "A區", "B區", "C區", "區區"};
@@ -45,7 +57,6 @@ public class PageFour  extends android.support.v4.app.Fragment {
         spin.setAdapter(List);
         spin2.setAdapter(List2);
 
-        toolbar.setTitle(R.string.Companion);
         /*
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);

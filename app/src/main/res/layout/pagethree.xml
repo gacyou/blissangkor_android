@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/linearLayout"
+        android:layout_above="@+id/endbar"
         android:layout_below="@+id/program_toolbar"
         android:orientation="vertical"
         android:focusable="true"
@@ -40,11 +40,11 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_alignTop="@+id/linearLayout"
+        android:layout_alignTop="@+id/endbar"
         android:background="@drawable/toolbar_shadow_top" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/endbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

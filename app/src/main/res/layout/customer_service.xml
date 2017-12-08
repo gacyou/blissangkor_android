@@ -27,7 +27,8 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:layout_below="@+id/program_toolbar"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/view3">
 
         <SearchView
             android:id="@+id/searchView"
@@ -73,11 +74,12 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_alignTop="@+id/linearLayout"
-        android:background="@drawable/toolbar_shadow_top" />
+        android:layout_alignTop="@+id/endbar"
+        android:background="@drawable/toolbar_shadow_top"
+        android:id="@+id/view3" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/endbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

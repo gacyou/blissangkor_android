@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -31,7 +33,7 @@ public class PageSix extends android.support.v4.app.Fragment {
 
     private String[] str;
     private TextView tx6, tx7;
-
+    private Button btn1, btn2, btn3, btn4;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.page_six, container, false);
@@ -41,12 +43,20 @@ public class PageSix extends android.support.v4.app.Fragment {
                 (String) this.getResources().getText(R.string.language),
                 (String) this.getResources().getText(R.string.logout)};
 
-        ImageView mImg1 = (ImageView) view.findViewById(R.id.image);
+        ImageButton mImg1 = (ImageButton) view.findViewById(R.id.imageButton);
         ListView mlist = (ListView) view.findViewById(R.id.list);
 
         mImg1.setImageBitmap(getRoundedCornerBitmap(
                 BitmapFactory.decodeResource(
                         getResources(), R.drawable.people),360.0f));
+        mImg1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(getActivity(), Member_information.class);
+                startActivity(i);
+            }
+        });
 
         ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, str);
         mlist.setAdapter(adapter);
@@ -59,6 +69,47 @@ public class PageSix extends android.support.v4.app.Fragment {
         tx7 = (TextView) view.findViewById(R.id.textView7);
         tx7.setTypeface(FontManager.getTypeface(view.getContext(),FontManager.FONTAWESOME));
         tx7.setText(R.string.fa_heart_o);
+
+        btn1 = (Button) view.findViewById(R.id.button);
+        btn2 = (Button) view.findViewById(R.id.button2);
+        btn3 = (Button) view.findViewById(R.id.button3);
+        btn4 = (Button) view.findViewById(R.id.button4);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(getActivity(), Member_Order.class);
+                startActivity(i);
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(getActivity(), Member_wishList.class);
+                startActivity(i);
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(getActivity(), Member_point.class);
+                startActivity(i);
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(getActivity(), Member_Code.class);
+                startActivity(i);
+            }
+        });
+
 
         return view;
     }
