@@ -10,4 +10,6 @@ public class Setting {
 
     public static Boolean abc = false;
 
+    public static String getProductInfor =
+            "http://211.21.114.208:8081/1.0/GetItem/";
 }

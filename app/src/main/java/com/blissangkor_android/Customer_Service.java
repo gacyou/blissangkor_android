@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.blissangkor_android.utils.FontManager;
 import com.blissangkor_android.utils.customerTextListAdapter;
 
 /**
@@ -36,7 +37,14 @@ public class Customer_Service extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         toolbtn = (Button) findViewById(R.id.toolbar_button);
-
+        toolbtn.setTypeface(FontManager.getTypeface(this,FontManager.FONTAWESOME));
+        toolbtn.setText(R.string.fa_chevron_left);
+        toolbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         tooltext = (TextView) findViewById(R.id.toolbar_text);
         tooltext.setText("諮詢中心");

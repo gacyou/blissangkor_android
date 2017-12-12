@@ -46,4 +46,7 @@
     <string name="pssword_new_input">輸入新的密碼</string>
     <string name="pssword_new_confirm">確認新的密碼</string>
     <string name="modify">確認修改</string>
+    <string name="nPayOrder">未付款訂單</string>
+    <string name="historyOrder">歷史訂單</string>
+    <string name="edit">編輯</string>
 </resources>

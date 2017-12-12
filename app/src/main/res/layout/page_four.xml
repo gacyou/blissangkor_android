@@ -7,8 +7,8 @@
     android:orientation="vertical">
 
     <include
-        android:id="@+id/program_toolbar"
-        layout="@layout/toolbar" />
+    android:id="@+id/program_toolbar"
+    layout="@layout/toolbar" />
 
     <View
         android:layout_width="match_parent"
