@@ -49,4 +49,16 @@
     <string name="nPayOrder">未付款訂單</string>
     <string name="historyOrder">歷史訂單</string>
     <string name="edit">編輯</string>
+
+    <!-- pageFourMenu -->
+    <string name="search">尋找旅伴</string>
+    <string name="myInfo">我的資料</string>
+    <string name="messenger">訊息中心</string>
+    <string name="myPhoto">我的相簿</string>
+    <string name="myCollection">我的收藏</string>
+    <string name="memberSearch">會員搜尋</string>
+    <string name="setting">其他設定</string>
+    <string name="Disclaimer">免責聲明</string>
+
+
 </resources>

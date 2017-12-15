@@ -12,13 +12,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.socks.library.KLog;
+
+import static android.widget.Toast.LENGTH_SHORT;
 import static com.blissangkor_android.R.attr.toolbarId;
 
 /**
@@ -28,7 +33,8 @@ import static com.blissangkor_android.R.attr.toolbarId;
 public class PageFour  extends android.support.v4.app.Fragment {
 
     Activity mActivity;
-    AppCompatActivity mAppCompatActivity;
+    Context mContext;
+
     private TextView tooltext;
     private Button   toolbtn;
 
@@ -37,16 +43,58 @@ public class PageFour  extends android.support.v4.app.Fragment {
         View view = inflater.inflate(R.layout.page_four, container, false);
 
         mActivity = getActivity();
+        mContext = view.getContext();
 
         Spinner spin = (Spinner) view.findViewById(R.id.spinner);
         Spinner spin2 = (Spinner) view.findViewById(R.id.spinner2);
 
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.pagefour_menu);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                switch (item.getItemId()) {
+
+                    case R.id.search:
+                        // Do onlick on menu action here
+                        Toast.makeText(mContext,"你按的是" + item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.myInfo:
+                        // Do onlick on menu action here
+                        Toast.makeText(mContext,"你按的是" + item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.messenger:
+                        // Do onlick on menu action here
+                        Toast.makeText(mContext,"你按的是" + item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.myPhoto:
+                        // Do onlick on menu action here
+                        Toast.makeText(mContext,"你按的是" + item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.myCollection:
+                        // Do onlick on menu action here
+                        Toast.makeText(mContext,"你按的是" + item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.memberSearch:
+                        // Do onlick on menu action here
+                        Toast.makeText(mContext,"你按的是" + item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.setting:
+                        // Do onlick on menu action here
+                        Toast.makeText(mContext,"你按的是" + item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.Disclaimer:
+                        // Do onlick on menu action here
+                        Toast.makeText(mContext,"你按的是" + item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+                        return true;
+                }
+                return false;
+            }
+        });
 
         toolbtn = (Button) view.findViewById(R.id.toolbar_button);
         toolbtn.setVisibility(View.GONE);
-
-
         tooltext = (TextView) view.findViewById(R.id.toolbar_text);
         tooltext.setText(R.string.Companion);
 
@@ -65,6 +113,12 @@ public class PageFour  extends android.support.v4.app.Fragment {
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        // TODO Auto-generated method stub
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
     }
@@ -73,19 +127,5 @@ public class PageFour  extends android.support.v4.app.Fragment {
     public void onResume() {
         super.onResume();
     }
-
-    public Toolbar initToolbar(int toolbarId, int title) {
-        AppCompatActivity mAppCompatActivity = (AppCompatActivity) mActivity;
-        Toolbar toolbar = (Toolbar) mAppCompatActivity.findViewById(toolbarId);
-        mAppCompatActivity.setSupportActionBar(toolbar);
-        ActionBar actionBar = mAppCompatActivity.getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(false);
-            actionBar.setDisplayShowTitleEnabled(false);
-        }
-        return toolbar;
-    }
-
-
 
 }

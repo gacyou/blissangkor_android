@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/search"
+        android:title="@string/Companion"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/myInfo"
+        android:title="@string/myInfo"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/messenger"
+        android:title="@string/messenger"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/myPhoto"
+        android:title="@string/myPhoto"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/myCollection"
+        android:title="@string/myCollection"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/memberSearch"
+        android:title="@string/memberSearch"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/setting"
+        android:title="@string/setting"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/Disclaimer"
+        android:title="@string/Disclaimer"
+        app:showAsAction="collapseActionView" />
+</menu>
