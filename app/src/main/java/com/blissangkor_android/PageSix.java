@@ -1,5 +1,6 @@
 package com.blissangkor_android;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -176,6 +177,7 @@ public class PageSix extends android.support.v4.app.Fragment {
                                 public void onClick(DialogInterface dialog, int which) {
                                     Intent i = new Intent(getContext(), LoginPage.class);
                                     getContext().startActivity(i);
+                                    ((Activity)getContext()).overridePendingTransition(R.anim.activity_open,0);
                                     getActivity().finish();
                                 }
                             })
