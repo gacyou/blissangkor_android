@@ -45,7 +45,7 @@ public class PageOnePagerAdapter2 extends PagerAdapter {
         // 佈局元件內容
         ImageView imageView = (ImageView)itemView.findViewById(R.id.image);
         imageView.setImageResource(mItems.get(position));
-        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
         ViewParent viewParent = itemView.getParent();
         if (viewParent != null) {
@@ -84,7 +84,7 @@ public class PageOnePagerAdapter2 extends PagerAdapter {
 
     @Override
     public float getPageWidth(int position) {
-        return (float) 0.8;
+        return (float) 0.7;
     }
 
 }

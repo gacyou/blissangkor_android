@@ -49,8 +49,7 @@
                         android:id="@+id/listImage"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:background="@drawable/p955x416"
-                        android:scaleType="matrix" />
+                        android:scaleType="fitCenter" />
 
                     <TextView
                         android:id="@+id/txt"
