@@ -21,7 +21,7 @@ public class Member_information extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.member_information);
+        setContentView(R.layout.page_six_member_information);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbtn = (Button) findViewById(R.id.toolbar_button);

@@ -22,6 +22,9 @@ import android.widget.Toast;
 
 import com.blissangkor_android.utils.FontManager;
 import com.blissangkor_android.utils.PageSix_AccountSetting;
+import com.blissangkor_android.utils.PageSix_ListAdapter;
+
+import java.util.ArrayList;
 
 import static com.blissangkor_android.utils.Util.getRoundedCornerBitmap;
 
@@ -35,14 +38,19 @@ public class PageSix extends android.support.v4.app.Fragment {
     private String[] str;
     private TextView tx6, tx7;
     private Button btn1, btn2, btn3, btn4;
+    private PageSix_ListAdapter mAdapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.page_six, container, false);
 
-        str = new String[]{(String) this.getResources().getText(R.string.account_setting),
-                (String) this.getResources().getText(R.string.qa),
-                (String) this.getResources().getText(R.string.language),
-                (String) this.getResources().getText(R.string.logout)};
+        ArrayList<String> str = new ArrayList<String>() {{
+            add((String) getActivity().getResources().getText(R.string.account_setting));
+            add((String) getActivity().getResources().getText(R.string.qa));
+            add((String) getActivity().getResources().getText(R.string.language));
+            add((String) getActivity().getResources().getText(R.string.logout));
+        }};
+
 
         ImageButton mImg1 = (ImageButton) view.findViewById(R.id.imageButton);
         ListView mlist = (ListView) view.findViewById(R.id.list);
@@ -59,8 +67,8 @@ public class PageSix extends android.support.v4.app.Fragment {
             }
         });
 
-        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, str);
-        mlist.setAdapter(adapter);
+        mAdapter = new PageSix_ListAdapter(getContext(), str);
+        mlist.setAdapter(mAdapter);
         mlist.setOnItemClickListener(onClickListView);
 
         tx6 = (TextView) view.findViewById(R.id.textView6);

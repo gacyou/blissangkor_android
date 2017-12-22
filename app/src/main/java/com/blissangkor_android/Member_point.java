@@ -21,7 +21,7 @@ public class Member_point extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.member_point);
+        setContentView(R.layout.page_six_point);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbtn = (Button) findViewById(R.id.toolbar_button);

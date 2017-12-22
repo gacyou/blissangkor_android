@@ -56,7 +56,7 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
     private PageOnePagerAdapter5 mAdapter5;
     private PageOnePagerAdapter6 mAdapter6;
 
-    private List<ImageView> mItems;
+    private List<Integer> list;
     private ImageView[] mBottomImages;
     private LinearLayout mBottomLiner;
 
@@ -78,7 +78,7 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
     private MyHandler mHandler;
     private Thread mThread;
 
-    private static final int[] pictures = { };
+    private static final int[] pictures = { R.drawable.p955x416,R.drawable.p1080x445,R.drawable.p1080x445,R.drawable.p1080x445,R.drawable.p1080x445};
     private static final int[] pictures2 = { R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338, R.drawable.p358x338 };
     private static final int[] pictures3 = { R.drawable.p955x416, R.drawable.p955x416, R.drawable.p955x416 };
     private static final int[] pictures4 = { R.drawable.p955x416, R.drawable.p955x416, R.drawable.p955x416 };
@@ -112,8 +112,9 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
         //配置轮播图ViewPager
 
         mViewPager = ((ViewPager) view.findViewById(R.id.live_view_pager));
-        mItems = new ArrayList<>();
-        mAdapter = new PageOnePagerAdapter(mItems, getContext());
+        list = new ArrayList<Integer>();
+        for(int i : pictures){list.add(i);}
+        mAdapter = new PageOnePagerAdapter(list, getContext());
         mViewPager.setAdapter(mAdapter);
         mViewPager.setOnTouchListener(this);
         mViewPager.addOnPageChangeListener(this);
@@ -161,7 +162,6 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
         mViewPager6.setAdapter(mAdapter6);
 
         //TODO: 添加ImageView
-        addImageView();
         mAdapter.notifyDataSetChanged();
         mAdapter2.notifyDataSetChanged();
         mAdapter3.notifyDataSetChanged();
@@ -220,33 +220,15 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
         super.onResume();
     }
 
-    private void addImageView( ){
-
-        ImageView view0 = new ImageView(getContext());
-        view0.setImageResource(R.drawable.p1080x445);
-        ImageView view1 = new ImageView(getContext());
-        view1.setImageResource(R.drawable.p1080x445);
-        ImageView view2 = new ImageView(getContext());
-        view2.setImageResource(R.drawable.p1080x445);
-
-        view0.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        view1.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        view2.setScaleType(ImageView.ScaleType.CENTER_CROP);
-
-        mItems.add(view0);
-        mItems.add(view1);
-        mItems.add(view2);
-    }
-
 
     private void setBottomIndicator(View view) {
         //获取指示器(下面三个小点)
         mBottomLiner = ((LinearLayout) view.findViewById(R.id.live_indicator));
         //右下方小圆点
-        mBottomImages = new ImageView[mItems.size()];
+        mBottomImages = new ImageView[list.size()];
         for (int i = 0; i < mBottomImages.length; i++) {
             ImageView imageView = new ImageView(getContext());
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(6, 6);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(10, 10);
             params.setMargins(5, 0, 5, 0);
             imageView.setLayoutParams(params);
             //如果当前是第一个 设置为选中状态
@@ -301,7 +283,7 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
     @Override
     public void onPageSelected(int position) {
         currentViewPagerItem = position;
-        if (mItems != null) {
+        if (list != null) {
             position %= mBottomImages.length;
             int total = mBottomImages.length;
 

@@ -1,6 +1,5 @@
 package com.blissangkor_android;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +13,6 @@ import com.blissangkor_android.utils.Member_Order_FragmentAdapter;
 import com.blissangkor_android.utils.Member_Order_p1;
 import com.blissangkor_android.utils.Member_Order_p2;
 import com.blissangkor_android.utils.NoScrollViewPager;
-import com.blissangkor_android.utils.PageTwoFragmentAdapter;
 
 import java.util.ArrayList;
 
@@ -38,7 +36,7 @@ public class Member_Order extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.member_order);
+        setContentView(R.layout.page_six_member_order);
 
         ArrayList<String> titleList = new ArrayList<String>() {{
             add((String) getResources().getText(R.string.nPayOrder));

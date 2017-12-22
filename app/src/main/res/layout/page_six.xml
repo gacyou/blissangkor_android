@@ -89,13 +89,13 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/line2"
+                android:layout_marginEnd="12dp"
                 android:layout_marginRight="8dp"
+                android:layout_toStartOf="@+id/line2"
                 android:text="@string/integral"
                 android:textAlignment="center"
-                android:textColor="@android:color/white"
-                android:layout_alignBottom="@+id/line2"
-                android:layout_toStartOf="@+id/line2"
-                android:layout_marginEnd="12dp" />
+                android:textColor="@android:color/white" />
 
             <Button
                 android:id="@+id/button4"

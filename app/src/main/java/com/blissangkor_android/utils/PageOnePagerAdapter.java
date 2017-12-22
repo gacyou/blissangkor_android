@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.ImageView;
 
+import com.blissangkor_android.R;
 import com.socks.library.KLog;
 
 import java.util.List;
@@ -20,12 +21,12 @@ public class PageOnePagerAdapter extends PagerAdapter {
 
     public static final int MAX_SCROLL_VALUE = 10000;
 
-    private List<ImageView> mItems;
+    private List<Integer> mItems;
     private Context mContext;
     private LayoutInflater mInflater;
     private int x;
 
-    public PageOnePagerAdapter(List<ImageView> items, Context context) {
+    public PageOnePagerAdapter(List<Integer> items, Context context) {
         mContext = context;
         mInflater = LayoutInflater.from(context);
         mItems = items;
@@ -39,28 +40,38 @@ public class PageOnePagerAdapter extends PagerAdapter {
      */
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        View ret = null;
+        //View ret = null;
+        mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        // 佈局
+        View itemView = mInflater.inflate(R.layout.pageone_pageradapter, container, false);
+
         //对ViewPager页号求摸取出View列表中要显示的项
         position %= mItems.size();
-        x = position;
+        //x = position;
         //Log.d("Adapter", "instantiateItem: position: " + position);
-        ret = mItems.get(position);
+       // ret = mItems.get(position);
+
+        ImageView imageView = (ImageView) itemView.findViewById(R.id.imageView);
+        imageView.setImageResource(mItems.get(position));
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
         //如果View已经在之前添加到了一个父组件，则必须先remove，否则会抛出IllegalStateException。
-        ViewParent viewParent = ret.getParent();
+        ViewParent viewParent = itemView.getParent();
         if (viewParent != null) {
             ViewGroup parent = (ViewGroup) viewParent;
-            parent.removeView(ret);
+            parent.removeView(itemView);
         }
-        container.addView(ret);
 
-        ret.setOnClickListener(new View.OnClickListener() {
+        container.addView(itemView);
+
+        itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 KLog.d("你現在按的是",x);
             }
         });
 
-        return ret;
+        return itemView;
     }
 
 

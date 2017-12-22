@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.blissangkor_android.R;
@@ -57,7 +56,7 @@ public class ExListAdapter extends BaseExpandableListAdapter {
         }
 
   /* 設置內容 */
-        TextView txtListChild = (TextView) convertView.findViewById(R.id.textView);
+        TextView txtListChild = (TextView) convertView.findViewById(R.id.textView2);
         TextView textIcon = (TextView) convertView.findViewById(R.id.textView2);
 
         txtListChild.setText(childText);
@@ -91,7 +90,7 @@ public class ExListAdapter extends BaseExpandableListAdapter {
 
 
   /* 設置標題 */
-        TextView lblListHeader = (TextView) convertView.findViewById(R.id.textView);
+        TextView lblListHeader = (TextView) convertView.findViewById(R.id.textView2);
         lblListHeader.setTypeface(null, Typeface.BOLD);
         lblListHeader.setText(headerTitle);
 

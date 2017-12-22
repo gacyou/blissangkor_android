@@ -52,5 +52,5 @@
     <string name="fa_mars">&#xf222;</string>
     <string name="fa_eye">&#xf06e;</string>
     <string name="fa_eye_slash">&#xf070;</string>
-
+    <string name="fa_volume_control_phone">&#xf2a0;</string>
 </resources>

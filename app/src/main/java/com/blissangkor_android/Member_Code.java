@@ -21,7 +21,7 @@ public class Member_Code extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.member_code);
+        setContentView(R.layout.page_six_code);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbtn = (Button) findViewById(R.id.toolbar_button);
