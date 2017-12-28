@@ -57,7 +57,7 @@ public class PageSix extends android.support.v4.app.Fragment {
 
         mImg1.setImageBitmap(getRoundedCornerBitmap(
                 BitmapFactory.decodeResource(
-                        getResources(), R.drawable.people),360.0f));
+                        getResources(), R.drawable.people), 0f));
         mImg1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

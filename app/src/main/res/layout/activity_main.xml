@@ -17,6 +17,12 @@
     </com.blissangkor_android.utils.NoScrollViewPager>
 
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignTop="@+id/endbar"
+        android:background="@drawable/toolbar_shadow_top" />
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"

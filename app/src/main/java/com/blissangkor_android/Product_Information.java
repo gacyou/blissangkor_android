@@ -1,15 +1,12 @@
 package com.blissangkor_android;
 
 import android.content.Intent;
-import android.media.audiofx.BassBoost;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.blissangkor_android.utils.FontManager;
@@ -17,12 +14,10 @@ import com.blissangkor_android.utils.Setting;
 import com.blissangkor_android.utils.Util;
 import com.socks.library.KLog;
 
-import org.json.JSONArray;
-import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.io.IOException;
-
-import static com.blissangkor_android.utils.Setting.getProductInfor;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Gacyou on 2017/12/5.
@@ -31,9 +26,10 @@ import static com.blissangkor_android.utils.Setting.getProductInfor;
 public class Product_Information extends AppCompatActivity{
 
 
-    private TextView tooltext;
+    private TextView tooltext, tv, tv2;
     private String id;
     private Button toolbtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +39,8 @@ public class Product_Information extends AppCompatActivity{
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbtn =  (Button) findViewById(R.id.toolbar_button);
         tooltext = (TextView) findViewById(R.id.toolbar_text);
+        tv = (TextView) findViewById(R.id.textView);
+        tv2 = (TextView) findViewById(R.id.textView2);
 
         toolbtn.setTypeface(FontManager.getTypeface(this,FontManager.FONTAWESOME));
         toolbtn.setText(R.string.fa_chevron_left);
@@ -61,26 +59,48 @@ public class Product_Information extends AppCompatActivity{
     }
 
 
-    public class getProductTask extends AsyncTask<Void, Void, String> {
+   class getProductTask extends AsyncTask<Void, Void, getProductTask.ReturnClass> {
 
         @Override
-        protected String doInBackground(Void... voids) {
+        protected ReturnClass doInBackground(Void... voids) {
+            ReturnClass r = new ReturnClass();
+
             try {
 
                 String url = Setting.getProductInfor + id;
                 String retSrc = Util.getJson(url);
-                return retSrc;
-            } catch (IOException e1) {
-                return "";
-            } catch (Exception e2) {
-                return "";
+                JSONObject j = new JSONObject(retSrc);
+                r.country = j.getString("country");
+                r.city = j.getString("city");
+                r.title = j.getString("title");
+                r.subTitle = j.getString("subTitle");
+                return r;
             }
+            catch (Exception e) {
+                e.printStackTrace();
+                return r;
+            }
+
         }
         @Override
-        protected void onPostExecute(final String result) {
+        protected void onPostExecute(final ReturnClass result) {
 
-            KLog.d("gggggggg",result);
+            KLog.d("gggggggg",result.country);
+            KLog.d("gggggggg",result.city);
+            KLog.d("gggggggg",result.title);
+            KLog.d("gggggggg",result.subTitle);
 
+            tv.setText(result.title);
+            tv2.setText(result.subTitle);
+
+        }
+
+
+        class ReturnClass {
+            public String country;
+            public String city;
+            public String title;
+            public String subTitle;
         }
 
     }

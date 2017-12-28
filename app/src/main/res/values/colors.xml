@@ -6,4 +6,20 @@
     <color name="colorTab">#ff8640</color>
     <color name="black">#000000</color>
     <color name="accent_material_dark">#ebb270</color>
+
+
+    <color name="_06b">#06b8d9</color>
+    <color name="_07a">#07a2c0</color>
+    <color name="f69">#f6946a</color>
+    <color name="fa8">#fa804f</color>
+    <color name="f9d">#f9dc77</color>
+    <color name="_636">#636363</color>
+    <color name="ccc">#cccccc</color>
+    <color name="f75">#f75656</color>
+    <color name="_0bc">#0bc7bc</color>
+    <color name="ff8">#ff879e</color>
+    <color name="e6f">#e6f8fb</color>
+    <color name="fff">#fff1d6</color>
+    <color name="f5f">#f5f5f5</color>
+    <color name="ffff">#ffffff</color>
 </resources>

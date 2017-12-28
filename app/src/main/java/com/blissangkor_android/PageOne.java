@@ -186,7 +186,8 @@ public class PageOne  extends android.support.v4.app.Fragment implements ViewPag
             public void onItemClick(int position) {
                 KLog.d("你現在按的是",position);
                 Intent i = new Intent(getActivity(), Product_Information.class);
-                i.putExtra("id","1");
+                String id = Integer.toString(position + 1);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });

@@ -45,7 +45,7 @@ public class LoginPage extends Activity  {
 
     Activity activity;
     Context context;
-    Button LoginBtn, btn2,btn3,btn4,btn5;
+    Button LoginBtn, btn2,btn3,btn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,11 +58,10 @@ public class LoginPage extends Activity  {
         btn2 = (Button)findViewById(R.id.button2) ;
         btn3 = (Button)findViewById(R.id.button3) ;
         btn4 = (Button)findViewById(R.id.button4) ;
-        btn5 = (Button)findViewById(R.id.button5) ;
 
 
-        btn5.setTypeface(FontManager.getTypeface(this,FontManager.FONTAWESOME));
-        btn5.setText(R.string.fa_times);
+        btn4.setTypeface(FontManager.getTypeface(this,FontManager.FONTAWESOME));
+        btn4.setText(R.string.fa_times);
 
 
         LoginBtn.setOnClickListener(new View.OnClickListener() {
@@ -86,21 +85,18 @@ public class LoginPage extends Activity  {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"登入",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"註冊帳號",Toast.LENGTH_SHORT).show();
             }
         });
 
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"註冊",Toast.LENGTH_SHORT).show();
-            }
-        });
+                Intent intent = new Intent(context, MainActivity.class);
+                startActivity(intent);
+                activity.finish();
+                activity.overridePendingTransition(0,R.anim.activity_close);
 
-        btn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(context,"關閉",Toast.LENGTH_SHORT).show();
             }
         });
 

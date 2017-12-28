@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/f5f"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -22,6 +24,7 @@
 
         <Button
             android:id="@+id/button"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -29,7 +32,6 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="50dp"
             android:background="@android:color/white"
-            style="?android:attr/borderlessButtonStyle"
             android:text="@string/my_Order" />
 
         <TextView
@@ -45,6 +47,7 @@
 
         <Button
             android:id="@+id/button2"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -53,7 +56,6 @@
             android:layout_marginLeft="50dp"
             android:layout_toEndOf="@+id/line"
             android:background="@android:color/white"
-            style="?android:attr/borderlessButtonStyle"
             android:text="@string/wish_list" />
 
         <LinearLayout
@@ -70,9 +72,10 @@
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="113dp"
-            android:background="?attr/colorPrimary"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true">
+            android:background="@drawable/background_radius"
+            tools:background="@drawable/background_radius">
 
             <Button
                 android:id="@+id/button3"
@@ -142,6 +145,14 @@
             android:background="@android:color/transparent"
             android:scaleType="centerCrop" />
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/user_pictureframe" />
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
@@ -151,6 +162,7 @@
             android:layout_marginTop="17dp"
             android:layout_toRightOf="@+id/imageButton"
             android:text="XXX"
+            android:textColor="@color/ffff"
             android:textSize="30sp" />
     </RelativeLayout>
 

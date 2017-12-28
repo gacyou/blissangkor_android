@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         tab1 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tab1.setTypeface(FontManager.getTypeface(this,FontManager.FONTAWESOME));
         tab1.setText(R.string.fa_globe);
-        tab1.setTextColor(getResources().getColor(R.color.colorTab));
+        tab1.setTextColor(getResources().getColor(R.color._06b));
         mTablayout.getTabAt(0).setCustomView(tab1);
 
         tab2 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
                if(tab.getPosition() == 0)
                {
-                   tab1.setTextColor(getResources().getColor(R.color.colorTab));
+                   tab1.setTextColor(getResources().getColor(R.color._06b));
 
                    tab2.setTextColor(getResources().getColor(R.color.black));
                    tab3.setTextColor(getResources().getColor(R.color.black));
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                }
                else if(tab.getPosition() == 1)
                {
-                   tab2.setTextColor(getResources().getColor(R.color.colorTab));
+                   tab2.setTextColor(getResources().getColor(R.color._06b));
 
                    tab1.setTextColor(getResources().getColor(R.color.black));
                    tab3.setTextColor(getResources().getColor(R.color.black));
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                }
                else if(tab.getPosition() == 2)
                {
-                   tab3.setTextColor(getResources().getColor(R.color.colorTab));
+                   tab3.setTextColor(getResources().getColor(R.color._06b));
 
                    tab1.setTextColor(getResources().getColor(R.color.black));
                    tab2.setTextColor(getResources().getColor(R.color.black));
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
                }
                else if(tab.getPosition() == 3)
                {
-                   tab4.setTextColor(getResources().getColor(R.color.colorTab));
+                   tab4.setTextColor(getResources().getColor(R.color._06b));
 
                    tab1.setTextColor(getResources().getColor(R.color.black));
                    tab2.setTextColor(getResources().getColor(R.color.black));
@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                }
                else if(tab.getPosition() == 4)
                {
-                   tab5.setTextColor(getResources().getColor(R.color.colorTab));
+                   tab5.setTextColor(getResources().getColor(R.color._06b));
 
                    tab1.setTextColor(getResources().getColor(R.color.black));
                    tab2.setTextColor(getResources().getColor(R.color.black));
@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
                }
                else if(tab.getPosition() == 5)
                {
-                   tab6.setTextColor(getResources().getColor(R.color.colorTab));
+                   tab6.setTextColor(getResources().getColor(R.color._06b));
 
                    tab1.setTextColor(getResources().getColor(R.color.black));
                    tab2.setTextColor(getResources().getColor(R.color.black));
