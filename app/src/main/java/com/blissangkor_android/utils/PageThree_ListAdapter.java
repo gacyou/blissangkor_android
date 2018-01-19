@@ -5,13 +5,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.blissangkor_android.R;
+import com.socks.library.KLog;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.security.AccessController.getContext;
 
 /**
  * Created by Gacyou on 2017/12/25.
@@ -45,7 +50,7 @@ public class PageThree_ListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView( int i, View view, ViewGroup viewGroup) {
         View v = mLayInf.inflate(R.layout.page_three_listadapter, viewGroup, false);
         ImageView iv = (ImageView) v.findViewById(R.id.imageView);
         iv.setImageResource(mitem.get(i));

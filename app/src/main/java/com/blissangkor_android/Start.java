@@ -7,6 +7,8 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import com.socks.library.KLog;
+
 import static java.lang.Thread.sleep;
 
 /**

@@ -51,6 +51,7 @@ public class PageFive extends android.support.v4.app.Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(getContext(),"你按的是第" + (i+1) + "個",Toast.LENGTH_SHORT).show();
+
             }
         });
 

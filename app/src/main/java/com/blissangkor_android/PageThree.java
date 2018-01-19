@@ -27,6 +27,7 @@ public class PageThree  extends android.support.v4.app.Fragment {
     private TextView tooltext;
     private Button   toolbtn;
     private static final int[] pictures = { R.drawable.p1080x445, R.drawable.p1080x445, R.drawable.p1080x445 };
+    private int pos;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -52,9 +53,18 @@ public class PageThree  extends android.support.v4.app.Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+                pos = i;
                 CheckedTextView chkItem = (CheckedTextView) view.findViewById(R.id.checkedTextView);
                 chkItem.setChecked(!chkItem.isChecked());
                 Toast.makeText(getActivity(),"點選第 "+(i +1) +" 個 \n內容："+pictures[i], Toast.LENGTH_SHORT).show();
+
+                Button btn = (Button) view.findViewById(R.id.button);
+                btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(getActivity(),"點選第 "+(pos +1) +" 個 \n內容的更改", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
