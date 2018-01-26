@@ -16,7 +16,7 @@ import com.blissangkor_android.utils.FontManager;
 public class Member_point extends AppCompatActivity{
 
     private Button toolbtn;
-    private TextView tooltext;
+    private TextView tooltext,tv2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,10 @@ public class Member_point extends AppCompatActivity{
                 finish();
             }
         });
+
+        tv2 = (TextView) findViewById(R.id.textView2);
+        tv2.setTypeface(FontManager.getTypeface(this,FontManager.FONTAWESOME));
+        tv2.setText(R.string.fa_gift);
 
     }
 

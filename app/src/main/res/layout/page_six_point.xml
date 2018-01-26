@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_light"
+    android:background="@color/f5f"
     android:orientation="vertical">
 
     <include
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_alignBottom="@+id/program_toolbar"
-        android:background="@drawable/toolbar_dropshadow" />
+        android:background="@color/ccc" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,16 +30,24 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
                 android:layout_marginLeft="12dp"
-                android:text="可用積分" />
+                android:text="可用積分"
+                android:textColor="@color/_636" />
 
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignBottom="@+id/program_toolbar"
+                android:background="@color/ccc" />
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:background="@android:color/white">
+                android:layout_height="70dp"
+                android:background="@color/ffff">
 
                 <TextView
                     android:id="@+id/textView2"
@@ -47,10 +55,49 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12dp"
                     android:layout_marginTop="14dp"
-                    android:text="T" />
+                    android:text="T"
+                    android:textColor="@color/_06b"
+                    android:textSize="36sp" />
 
                 <TextView
-                    android:id="@+id/textView46"
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView3"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@+id/textView2"
+                    android:text="50"
+                    android:textColor="@color/f69"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView5"
+                    android:layout_toRightOf="@+id/textView5"
+                    android:text="積分 =" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView5"
+                    android:layout_toRightOf="@+id/textView6"
+                    android:text="50"
+                    android:textColor="@color/f69"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView5"
+                    android:layout_toRightOf="@+id/textView7"
+                    android:text="台幣" />
+
+                <TextView
+                    android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@+id/textView2"
@@ -58,15 +105,24 @@
                     android:layout_toRightOf="@+id/textView2"
                     android:text="(你可以在付款的時候使用積分)" />
             </RelativeLayout>
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignBottom="@+id/program_toolbar"
+                android:background="@color/ccc" />
+
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="20dp"
-            android:text="積分紀錄" />
+            android:text="積分紀錄"
+            android:textColor="@color/_636" />
 
         <ListView
             android:id="@+id/pointList"
